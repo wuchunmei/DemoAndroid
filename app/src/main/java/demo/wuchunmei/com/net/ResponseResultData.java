@@ -69,4 +69,6 @@ public final class ResponseResultData<T> {
                 ";msg = " + msg +
                 ";data = " + dataStr;
     }
+
+
 }

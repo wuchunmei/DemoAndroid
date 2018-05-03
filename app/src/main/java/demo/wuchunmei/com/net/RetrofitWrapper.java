@@ -12,7 +12,7 @@ import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
-import demo.wuchunmei.com.Util.MD5Util;
+import demo.wuchunmei.com.net.util.MD5Util;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -35,7 +35,7 @@ public enum RetrofitWrapper {
     private Context mApplicationContext;
     private Map<String, String> mHeaderMap;
     private CommonInterceptor mInterceptor;//通用拦截器
-    private static final String REQUEST_BASE_URL = "http://wanandroid.com/";
+    private static final String REQUEST_BASE_URL = "http://120.76.205.241:8000/";
 
     public RetrofitWrapper getInstance(Context applicationContext) {
         if (mApplicationContext == null || mRetrofit == null) {

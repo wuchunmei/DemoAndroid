@@ -9,6 +9,8 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+import demo.wuchunmei.com.util.Utils;
+
 
 //								 _ooOoo_
 //								o8888888o
@@ -42,7 +44,9 @@ import java.io.IOException;
 //						不见满街漂亮妹，哪个归得程序员？
 
 /**
- * Application对象
+ * 作者：wuchunmei on 5/3/18 00:51
+ * <p>
+ * 邮箱：646812329@qq.com
  */
 public class DemoApplication extends Application {
 
@@ -54,6 +58,7 @@ public class DemoApplication extends Application {
     public void onCreate() {
         super.onCreate();
         applicationContext = getApplicationContext();
+        Utils.init(this);
         init();
     }
 
