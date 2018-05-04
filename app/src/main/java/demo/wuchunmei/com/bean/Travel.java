@@ -7,7 +7,7 @@ import java.util.List;
  * <p>
  * 邮箱：646812329@qq.com
  *
- *
+ *data[
  * {
  "shareCount": null,
  "title": null,
@@ -28,9 +28,7 @@ import java.util.List;
  "posterScreenName": "Ailsa岚"
 
  },
- *
- *
- */
+ ]*/
 public class Travel extends Entity{
     private String shareCount;
     private String  title;

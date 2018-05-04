@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" format="string" name="authority_cache">cn.tianya.provider.cache</item>
+    <item type="id" format="string" name="authority_data">cn.tianya.provider.data</item>
+    
+    <item type="id" format="string" name="authority_offline">cn.tianya.provider.offline</item>
+</resources>
