@@ -60,6 +60,8 @@ public final class Utils {
     static WeakReference<Activity> sTopActivityWeakRef;
     static List<Activity> sActivityList = new LinkedList<>();
 
+    private static SPUtils spUtils;
+
     private static Application.ActivityLifecycleCallbacks mCallbacks = new Application.ActivityLifecycleCallbacks() {
         @Override
         public void onActivityCreated(Activity activity, Bundle bundle) {
@@ -110,6 +112,7 @@ public final class Utils {
     public static void init(@NonNull final Application app) {
         Utils.sApplication = app;
         app.registerActivityLifecycleCallbacks(mCallbacks);
+        spUtils = new SPUtils("sh_tools");
     }
 
     /**
@@ -126,5 +129,9 @@ public final class Utils {
         if (sTopActivityWeakRef == null || !activity.equals(sTopActivityWeakRef.get())) {
             sTopActivityWeakRef = new WeakReference<>(activity);
         }
+    }
+
+    public static SPUtils getSpUtils() {
+        return spUtils;
     }
 }

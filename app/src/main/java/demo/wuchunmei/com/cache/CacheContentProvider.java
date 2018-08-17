@@ -26,7 +26,7 @@ import demo.wuchunmei.com.util.ContentProviderUtil;
  */
 public class CacheContentProvider extends ContentProvider {
     private static final String TAG = "CacheContentProvider";
-	private static final String SDCARD_DBPATH = "data";
+	private static final String SDCARD_DBPATH = "Data";
 
     public static final String CACHE_PATH = "caches";
     public static final String NOTE_PATH = "notes";
@@ -273,7 +273,7 @@ public class CacheContentProvider extends ContentProvider {
         SQLiteDatabase db = mOpenHelper.getReadableDatabase();
         Cursor c = qb.query(db, projection, selection, selectionArgs, null, having, orderBy);
 
-        // Tell the cursor what uri to watch, so it knows when its source data
+        // Tell the cursor what uri to watch, so it knows when its source Data
         // changes
         c.setNotificationUri(getContext().getContentResolver(), uri);
         return c;

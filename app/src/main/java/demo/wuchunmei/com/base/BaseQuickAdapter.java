@@ -350,14 +350,14 @@ public abstract class BaseQuickAdapter<T, K extends BaseViewHolder> extends Recy
 
 
     /**
-     * Refresh end, no more data
+     * Refresh end, no more Data
      */
     public void loadMoreEnd() {
         loadMoreEnd(false);
     }
 
     /**
-     * Refresh end, no more data
+     * Refresh end, no more Data
      *
      * @param gone if true gone the load more view
      */
@@ -444,7 +444,7 @@ public abstract class BaseQuickAdapter<T, K extends BaseViewHolder> extends Recy
 
     /**
      * Same as QuickAdapter#QuickAdapter(Context,int) but with
-     * some initialization data.
+     * some initialization Data.
      *
      * @param layoutResId The layout resource id of each item.
      * @param data        A new list is created out of this one to avoid mutable list
@@ -465,7 +465,7 @@ public abstract class BaseQuickAdapter<T, K extends BaseViewHolder> extends Recy
     }
 
     /**
-     * setting up a new instance to data;
+     * setting up a new instance to Data;
      *
      * @param data
      */
@@ -495,7 +495,7 @@ public abstract class BaseQuickAdapter<T, K extends BaseViewHolder> extends Recy
     }
 
     /**
-     * add one new data in to certain location
+     * add one new Data in to certain location
      *
      * @param position
      */
@@ -506,7 +506,7 @@ public abstract class BaseQuickAdapter<T, K extends BaseViewHolder> extends Recy
     }
 
     /**
-     * add one new data
+     * add one new Data
      */
     public void addData(@NonNull T data) {
         mData.add(data);
@@ -528,7 +528,7 @@ public abstract class BaseQuickAdapter<T, K extends BaseViewHolder> extends Recy
     }
 
     /**
-     * change data
+     * change Data
      */
     public void setData( int index, @NonNull T data) {
         mData.set(index, data);
@@ -536,10 +536,10 @@ public abstract class BaseQuickAdapter<T, K extends BaseViewHolder> extends Recy
     }
 
     /**
-     * add new data in to certain location
+     * add new Data in to certain location
      *
      * @param position the insert position
-     * @param newData  the new data collection
+     * @param newData  the new Data collection
      */
     public void addData( int position, @NonNull Collection<? extends T> newData) {
         mData.addAll(position, newData);
@@ -548,9 +548,9 @@ public abstract class BaseQuickAdapter<T, K extends BaseViewHolder> extends Recy
     }
 
     /**
-     * add new data to the end of mData
+     * add new Data to the end of mData
      *
-     * @param newData the new data collection
+     * @param newData the new Data collection
      */
     public void addData(@NonNull Collection<? extends T> newData) {
         mData.addAll(newData);
@@ -559,10 +559,10 @@ public abstract class BaseQuickAdapter<T, K extends BaseViewHolder> extends Recy
     }
 
     /**
-     * use data to replace all item in mData. this method is different {@link #setNewData(List)},
+     * use Data to replace all item in mData. this method is different {@link #setNewData(List)},
      * it doesn't change the mData reference
      *
-     * @param data data collection
+     * @param data Data collection
      */
     public void replaceData(@NonNull Collection<? extends T> data) {
         // 不是同一个引用才清空列表
@@ -576,7 +576,7 @@ public abstract class BaseQuickAdapter<T, K extends BaseViewHolder> extends Recy
     /**
      * compatible getLoadMoreViewCount and getEmptyViewCount may change
      *
-     * @param size Need compatible data size
+     * @param size Need compatible Data size
      */
     private void compatibilityDataSizeChanged(int size) {
         final int dataSize = mData == null ? 0 : mData.size();
@@ -586,7 +586,7 @@ public abstract class BaseQuickAdapter<T, K extends BaseViewHolder> extends Recy
     }
 
     /**
-     * Get the data of list
+     * Get the Data of list
      *
      * @return 列表数据
      */
@@ -596,11 +596,11 @@ public abstract class BaseQuickAdapter<T, K extends BaseViewHolder> extends Recy
     }
 
     /**
-     * Get the data item associated with the specified position in the data set.
+     * Get the Data item associated with the specified position in the Data set.
      *
-     * @param position Position of the item whose data we want within the adapter's
-     *                 data set.
-     * @return The data at the specified position.
+     * @param position Position of the item whose Data we want within the adapter's
+     *                 Data set.
+     * @return The Data at the specified position.
      */
     @Nullable
     public T getItem(int position) {
@@ -793,7 +793,7 @@ public abstract class BaseQuickAdapter<T, K extends BaseViewHolder> extends Recy
     }
 
     /**
-     * Load more without data when settings are clicked loaded
+     * Load more without Data when settings are clicked loaded
      *
      * @param enable
      */
@@ -1353,7 +1353,7 @@ public abstract class BaseQuickAdapter<T, K extends BaseViewHolder> extends Recy
     /**
      * Call before {@link RecyclerView#setAdapter(RecyclerView.Adapter)}
      *
-     * @param isHeadAndEmpty false will not show headView if the data is empty true will show emptyView and headView
+     * @param isHeadAndEmpty false will not show headView if the Data is empty true will show emptyView and headView
      */
     public void setHeaderAndEmpty(boolean isHeadAndEmpty) {
         setHeaderFooterEmpty(isHeadAndEmpty, false);
@@ -1383,7 +1383,7 @@ public abstract class BaseQuickAdapter<T, K extends BaseViewHolder> extends Recy
     /**
      * When the current adapter is empty, the BaseQuickAdapter can display a special view
      * called the empty view. The empty view is used to provide feedback to the user
-     * that no data is available in this AdapterView.
+     * that no Data is available in this AdapterView.
      *
      * @return The view to show if the adapter is empty.
      */
@@ -1533,7 +1533,7 @@ public abstract class BaseQuickAdapter<T, K extends BaseViewHolder> extends Recy
     /**
      * {@link #addAnimation(RecyclerView.ViewHolder)}
      *
-     * @param firstOnly true just show anim when first loading false show anim when load the data every time
+     * @param firstOnly true just show anim when first loading false show anim when load the Data every time
      */
     public void isFirstOnly(boolean firstOnly) {
         this.mFirstOnlyEnable = firstOnly;
@@ -1575,7 +1575,7 @@ public abstract class BaseQuickAdapter<T, K extends BaseViewHolder> extends Recy
     /**
      * Get the row id associated with the specified position in the list.
      *
-     * @param position The position of the item within the adapter's data set whose row id we want.
+     * @param position The position of the item within the adapter's Data set whose row id we want.
      * @return The id of the item at the specified position.
      */
     @Override
@@ -1825,7 +1825,7 @@ public abstract class BaseQuickAdapter<T, K extends BaseViewHolder> extends Recy
      * @return return the closest parent item position of the IExpandable.
      * if the IExpandable item's level is 0, return itself position.
      * if the item's level is negative which mean do not implement this, return a negative
-     * if the item is not exist in the data list, return a negative.
+     * if the item is not exist in the Data list, return a negative.
      */
     public int getParentPosition(@NonNull T item) {
         int position = getItemPosition(item);

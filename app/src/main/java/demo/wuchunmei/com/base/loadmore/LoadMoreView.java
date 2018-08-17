@@ -81,9 +81,9 @@ public abstract class LoadMoreView {
     }
 
     /**
-     * No more data is hidden
+     * No more Data is hidden
      *
-     * @return true for no more data hidden load more
+     * @return true for no more Data hidden load more
      * @deprecated Use {@link BaseQuickAdapter#loadMoreEnd(boolean)} instead.
      */
     @Deprecated

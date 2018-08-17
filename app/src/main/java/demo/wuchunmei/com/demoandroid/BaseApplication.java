@@ -2,6 +2,7 @@ package demo.wuchunmei.com.demoandroid;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.text.TextUtils;
 
 
@@ -48,7 +49,7 @@ import demo.wuchunmei.com.util.Utils;
  * <p>
  * 邮箱：646812329@qq.com
  */
-public class DemoApplication extends Application {
+public class BaseApplication extends Application {
 
     public static volatile Context applicationContext;
 
@@ -58,11 +59,11 @@ public class DemoApplication extends Application {
     public void onCreate() {
         super.onCreate();
         applicationContext = getApplicationContext();
-        Utils.init(this);
         init();
     }
 
     private void init() {
+        Utils.init(this);
     }
 
     /**
@@ -93,6 +94,26 @@ public class DemoApplication extends Application {
         }
         return null;
     }
+
+
+    /**
+     * 获取当前本地apk的版本
+     *
+     * @param mContext
+     * @return
+     */
+    public static int getVersionCode(Context mContext) {
+        int versionCode = 0;
+        try {
+            //获取软件版本号，对应AndroidManifest.xml下android:versionCode
+            versionCode = mContext.getPackageManager().
+                    getPackageInfo(mContext.getPackageName(), 0).versionCode;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return versionCode;
+    }
+
 
     @Override
     public void onTerminate() {

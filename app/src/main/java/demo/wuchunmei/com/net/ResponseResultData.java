@@ -67,7 +67,7 @@ public final class ResponseResultData<T> {
     public String toString() {
         return ";code = " + code +
                 ";msg = " + msg +
-                ";data = " + dataStr;
+                ";Data = " + dataStr;
     }
 
 
