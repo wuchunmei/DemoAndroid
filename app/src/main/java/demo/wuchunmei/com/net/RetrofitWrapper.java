@@ -71,7 +71,10 @@ public enum RetrofitWrapper {
         //mFastRetrofit超时时间更短
         OkHttpClient shortTimeoutOkHttpClient = new OkHttpClient.Builder().connectTimeout(SHORT_CONNECTION_TIMEOUT, TimeUnit.SECONDS).
                 readTimeout(SHORT_READ_TIMEOUT, TimeUnit.SECONDS).addInterceptor(mInterceptor).addInterceptor(logging).build();
-        mFastRetrofit = new Retrofit.Builder().baseUrl(baseUrl).client(shortTimeoutOkHttpClient).addConverterFactory(GsonConverterFactory.create()).addCallAdapterFactory(RxJava2CallAdapterFactory.create()).build();
+        mFastRetrofit = new Retrofit.Builder().baseUrl(baseUrl).client(shortTimeoutOkHttpClient)
+                .addConverterFactory(GsonConverterFactory.create())
+                .addConverterFactory(new NullOnEmptyConverterFactory())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create()).build();
     }
 
 
@@ -79,8 +82,6 @@ public enum RetrofitWrapper {
         Map<String, String> map = new HashMap<String, String>();
         String verName = null;
         int verCode = 0;
-        String uuid = null;
-
         //获取versionCode、versionName
         try {
             PackageInfo pm = mApplicationContext.getPackageManager().getPackageInfo(mApplicationContext.getPackageName(), 0);
@@ -91,15 +92,6 @@ public enum RetrofitWrapper {
         }
         map.put("vcode", "" + verCode);
         map.put("vname", verName);
-        //获取uuid
-        TelephonyManager telephonyManager = (TelephonyManager) mApplicationContext.getSystemService(Context.TELEPHONY_SERVICE);
-        if (telephonyManager == null
-                || TextUtils.isEmpty(telephonyManager.getDeviceId())) {
-            uuid = UUID.randomUUID().toString().replace("-", "");
-        } else {
-            uuid = MD5Util.MD5(telephonyManager.getDeviceId().toString());
-        }
-        map.put("uuid", uuid);
         //获取机器码及版本号
         map.put("mobile", android.os.Build.MODEL + ";" + android.os.Build.DEVICE);
         map.put("sdk", "" + android.os.Build.VERSION.SDK_INT);
